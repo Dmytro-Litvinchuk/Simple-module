@@ -1,0 +1,28 @@
+my_text.content:
+  path: '/adyax_test'
+  defaults:
+    _controller: '\Drupal\my_text\Controller\MyTextController::content'
+    _title: 'Hello, adyax!'
+  requirements:
+    _permission: 'access content'
+
+my_text.node:
+  path: '/adyax_test_1/{node}'
+  defaults:
+    _controller: '\Drupal\my_text\Controller\NodeController::getBody'
+    _title_callback: '\Drupal\my_text\Controller\NodeController::getTitle'
+  requirements:
+    _filter_permission: 'TRUE'
+  options:
+    parameters:
+      node:
+        # node check isset
+        type: entity:node
+
+my_text.form:
+  path: '/adyax_test_form'
+  defaults:
+    _form: '\Drupal\my_text\Form\FormNewsletter'
+    _title: 'Subscribe to our newsletter'
+  requirements:
+    _filter_permission: 'TRUE'

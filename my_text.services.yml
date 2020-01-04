@@ -1,0 +1,5 @@
+services:
+  my_text.access_checker:
+    class: Drupal\my_text\Access\FilterPermissions
+    tags:
+      - { name: access_check, applies_to: _filter_permission }
