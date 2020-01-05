@@ -4,7 +4,8 @@ my_text.content:
     _controller: '\Drupal\my_text\Controller\MyTextController::content'
     _title: 'Hello, adyax!'
   requirements:
-    _permission: 'access content'
+    # custom permission
+    _filter_permission: 'TRUE'
 
 my_text.node:
   path: '/adyax_test_1/{node}'

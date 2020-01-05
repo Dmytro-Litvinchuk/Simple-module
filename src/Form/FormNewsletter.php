@@ -6,7 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class FormNewsletter
+ * Class FormNewsletter.
  *
  * @package Drupal\my_text\Form
  */
@@ -49,7 +49,8 @@ class FormNewsletter extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $name = $form_state->getValue('name');
-    \Drupal::messenger()->addMessage($name . ' you are subscribed our news!');
+    $text = $this->t('you are subscribed our news!');
+    \Drupal::messenger()->addMessage($name . ' ' . $text);
   }
 
 }

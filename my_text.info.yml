@@ -1,5 +1,5 @@
 name: My Text
 type: module
-description: My custom block with simple text.
+description: My simple custom module with form, block, controller etc.
 package: Custom
 core: 8.x

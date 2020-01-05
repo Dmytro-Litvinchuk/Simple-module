@@ -7,16 +7,20 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 
 /**
- * Class FilterPermissions
+ * Class FilterPermissions.
  *
  * @package Drupal\my_text\Access
  */
 class FilterPermissions implements AccessInterface {
 
   /**
+   * Access for authenticated users only.
+   *
    * @param \Drupal\Core\Session\AccountInterface $account
+   *   One of the required parameters.
    *
    * @return \Drupal\Core\Access\AccessResultAllowed|\Drupal\Core\Access\AccessResultForbidden
+   *   Return access type.
    */
   public function access(AccountInterface $account) {
     if (!in_array('authenticated', $account->getRoles())) {
